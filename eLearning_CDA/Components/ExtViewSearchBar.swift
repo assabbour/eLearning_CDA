@@ -29,7 +29,7 @@ struct ExtViewSearchBar: View {
             .background(.white)
             .cornerRadius(20)
             .shadow(radius: 3, x: 5, y: 5)
-            .padding(.leading, 10)
+            .padding(.leading, 20)
             Spacer()
             
             if showTextField {
@@ -41,7 +41,7 @@ struct ExtViewSearchBar: View {
                         .cornerRadius(12)
                         .shadow(radius: 2)
                         .transition(.move(edge: .top).combined(with: .opacity))
-                        .padding(.trailing,10)
+                        .padding(.trailing,20)
                 }
             }
         }

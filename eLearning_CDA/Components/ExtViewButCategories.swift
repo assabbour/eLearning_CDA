@@ -13,17 +13,17 @@ struct ExtViewButCategories: View {
 //    var enumCategories = Enu
     
     var body: some View {
-//        Button(action: {
-//            isSelecte.toggle()
-//        }) {
-//            HStack {
-//                Text (EnumCategories.type.text)
-//            }
-//            .frame(width: 115, height: 30)
-//            .foregroundStyle(isSelecte ? Color.white : Color.black)
-//            .background(isSelecte ? Color.primary : Color.gray.opacity(0.4))
-//            .cornerRadius(100)
-//        }
+        Button(action: {
+            isSelecte.toggle()
+        }) {
+            HStack {
+                Text ("Transformers 3")
+            }
+            .frame(width: 145, height: 30)
+            .foregroundStyle(isSelecte ? Color.white : Color.black)
+            .background(isSelecte ? Color.primary : Color.gray.opacity(0.4))
+            .cornerRadius(100)
+        }
     }
 }
 

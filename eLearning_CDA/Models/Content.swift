@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Content: Identifiable {
+    var id = UUID()
+    var description: String
+    var imageCourse: String
+    var category: [Categories]
+}

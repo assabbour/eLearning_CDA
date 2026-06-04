@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ListLessonsCardView: View {
+    
+    var columns = [ GridItem(.flexible()), GridItem(.flexible())]
+    
     var body: some View {
         ZStack {
             ExtViewGradient()
@@ -16,6 +19,12 @@ struct ListLessonsCardView: View {
                     .font(.largeTitle)
                     .padding(.top, 30)
                 ExtViewSearchBar()
+                
+                
+                
+                
+                
+                
                 Spacer()
             }
         }

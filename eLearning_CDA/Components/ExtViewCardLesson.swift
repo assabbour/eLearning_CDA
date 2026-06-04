@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ExtViewCardLesson: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            VStack {
+                Image(.cours1)
+                    .resizable()
+                    .scaledToFill()
+//                    .clipShape(.)
+                
+            }
+        }
+        .frame(width: 175, height: 240)
+        .background(.yellow)
+        .cornerRadius(40)
     }
 }
 

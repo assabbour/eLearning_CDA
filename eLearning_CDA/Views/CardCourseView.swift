@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct CardCourseView: View {
+    
+    var isSelected = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
     }
 }
 
