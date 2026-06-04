@@ -1,18 +1,18 @@
 //
-//  ExtViewGradient.swift
+//  ExtViewCardLesson.swift
 //  eLearning_CDA
 //
-//  Created by apprenant92 on 01/06/2026.
+//  Created by apprenant92 on 03/06/2026.
 //
 
 import SwiftUI
 
-struct ExtViewGradient: View {
+struct ExtViewCardLesson: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    ExtViewGradient()
+    ExtViewCardLesson()
 }
