@@ -16,7 +16,7 @@ struct Meesage: Identifiable {
 }
 
 struct ConversationRow: View {
-    let conversation: Meesage
+   let conversation: Meesage
 
     var body: some View {
         HStack(spacing: 12) {
@@ -51,7 +51,7 @@ struct ConversationRow: View {
     }
 }
 #Preview {
-    ConversationsView()
+    CardMessageView()
 }
 
 

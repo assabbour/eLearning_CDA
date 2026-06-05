@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConversationsView: View {
+struct CardMessageView: View {
 
     let conversations = [
         Meesage(name: "Colette", lastMessage: "Bonjour", image: "colette"),
@@ -26,7 +26,8 @@ struct ConversationsView: View {
             ZStack {
                 List(conversations) { conversation in
                     NavigationLink {
-                        Text("Conversation avec \(conversation.name)")
+                      // Text("Conversation avec \(conversation.name)")
+                        ChatView()
                     } label: {
                         ConversationRow(conversation: conversation)
                     }
@@ -39,7 +40,7 @@ struct ConversationsView: View {
     }
 }
 #Preview {
-    ConversationsView()
+    CardMessageView()
 }
 
 
