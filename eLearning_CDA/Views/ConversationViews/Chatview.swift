@@ -1,121 +1,58 @@
 import SwiftUI
-
+// Vue qui représente l'écran de discussion
 struct ChatView: View {
-    //@State private var  conversation: Meesage
     @State private var messageText: String = ""
-    
-    @State private var messages: [Messages] = [
-        Messages(text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", isMe: false),
-        Messages(text: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", isMe: true),
-        Messages(text: "when an unknown printer took a galley of type and scrambled it to make a type", isMe: false),
-        Messages(text: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", isMe: true),
-        Messages(text: "when an unknown printer took a galley of type and scrambled it to make a type", isMe: false)
+    let conversation: Message
+    @State private var messages: [Conversation] = [
+        Conversation(text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry", isMe: false),
+        Conversation(text: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", isMe: true),
+        Conversation(text: "when an unknown printer took a galley of type and scrambled it to make a type", isMe: false),
+        Conversation(text: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", isMe: true),
+        Conversation(text: "when an unknown printer took a galley of type and scrambled it to make a type", isMe: false)
     ]
-    
-    var body: some View {
-        NavigationView {
-            ZStack {
+var body: some View {
+            NavigationStack {
 
                 VStack {
-                    
-                    ScrollView {
+
+                    ScrollView {       // Zone scrollable pour afficher les messages
                         VStack(spacing: 12) {
-                            ForEach(messages) { message in
-                                MessageBubble(message: message)
+                            ForEach(messages) { message in    // Parcourt le tableau messages
+                                MessageBubble(message: message) // Affiche une bulle pour chaque message
                             }
                         }
                         .padding(.top, 10)
                         .padding(.horizontal)
                     }
-                    
+                    // Barre de saisie du message
                     ChatInputBar(text: $messageText) {
                         sendMessage()
                     }
                 }
-            }
-            .navigationTitle("Nom et prenom")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-    }
-    
-    private func sendMessage() {
-        guard !messageText.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-        messages.append(Messages(text: messageText, isMe: true))
-        messageText = ""
-    }
-}
-
-struct MessageBubble: View {
-    let message: Messages
-    
-    var body: some View {
-        HStack {
-            if message.isMe { Spacer() }
-            
-            Text(message.text)
-                .padding()
-                .background(message.isMe ? Color.green.opacity(0.8) : Color.gray.opacity(0.5))
-                .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 18))
-                .frame(maxWidth: 260, alignment: message.isMe ? .trailing : .leading)
-            
-            if !message.isMe { Spacer() }
-        }
-    }
-}
-
-
-struct ChatInputBar: View {
-    
-    @Binding var text: String
-    var onSend: () -> Void
-    
-    var body: some View {
-        HStack(spacing: 12) {
-            
-            Button {
-                // camera action
-            } label: {
-                Image(systemName: "camera.fill")
-                    .foregroundColor(.black)
-                    .padding(10)
-                    .background(Color.gray.opacity(0.2))
-                    .clipShape(Circle())
-            }
-            
-            HStack {
-                TextField("Message ...", text: $text)
-                    .padding(8)
-                
-                Button {
-                    // mic action
-                } label: {
-                    Image(systemName: "mic.fill")
-                        .foregroundColor(.gray)
-                }
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
-            .background(Color.gray.opacity(0.2))
-            .clipShape(Capsule())
-            
-            Button {
-                onSend()
-            } label: {
-                Image(systemName: "plus")
-                    .foregroundColor(.black)
-                    .padding(10)
-                    .background(Color.gray.opacity(0.2))
-                    .clipShape(Circle())
+                .navigationTitle(conversation.name) // Nom du contact
+                .navigationBarTitleDisplayMode(.inline) // Titre affiché en petit au centre
             }
         }
-        .padding()
+//ajoute un message
+// Fonction appelée lorsqu'on clique sur le bouton envoyer
+        private func sendMessage() {
+            guard !messageText.trimmingCharacters(in: .whitespaces).isEmpty else { return }
+            // Vérifie que le message n'est pas vide
+            // Ajoute un nouveau message dans le tableau
+            messages.append(Conversation(text: messageText, isMe: true))
+            messageText = ""  // Vide le champ de saisie après l'envoi
+        }
     }
-}
 
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(
+            conversation: Message(
+                name: "Colette",
+                lastMessage: "Bonjour",
+                image: "colette"
+            )
+        )
     }
 }

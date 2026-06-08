@@ -8,33 +8,32 @@
 import SwiftUI
 
 struct CardMessageView: View {
-
+    //  let conversation: Message
     let conversations = [
-        Meesage(name: "Colette", lastMessage: "Bonjour", image: "colette"),
-        Meesage(name: "Cyriac", lastMessage: "Merci", image: "Cyriac"),
-        Meesage(name: "Jaouad", lastMessage: "On se voit demain ?", image: "jaouad"),
-        Meesage(name: "Karima", lastMessage: "Merci 👍", image: "karima"),
-        Meesage(name: "Louise", lastMessage: "J’arrive", image: "louise"),
-        Meesage(name: "Theo", lastMessage: "Ok", image: "Theo"),
-        Meesage(name: "Veronique", lastMessage: "Cours ?", image: "veronique"),
-        Meesage(name: "Yann", lastMessage: "Contrôle vendredi", image: "yann")
+        Message(name: "Colette", lastMessage: "Bonjour", image: "colette"),
+        Message(name: "Cyriac", lastMessage: "Merci", image: "Cyriac"),
+        Message(name: "Jaouad", lastMessage: "On se voit demain ?", image: "jaouad"),
+        Message(name: "Karima", lastMessage: "Merci 👍", image: "karima"),
+        Message(name: "Louise", lastMessage: "J’arrive", image: "louise"),
+        Message(name: "Theo", lastMessage: "Ok", image: "Theo"),
+        Message(name: "Veronique", lastMessage: "Cours ?", image: "veronique"),
+        Message(name: "Yann", lastMessage: "Contrôle vendredi", image: "yann")
     ]
-
+    
     var body: some View {
-
+        
         NavigationStack {
-            ZStack {
                 List(conversations) { conversation in
                     NavigationLink {
-                      // Text("Conversation avec \(conversation.name)")
-                        ChatView()
+                        // Ouvre le chat du contact sélectionné
+                        ChatView(conversation: conversation)
                     } label: {
-                        ConversationRow(conversation: conversation)
+                        // Ouvre le chat du contact sélectionné
+                        MessageRow(conversation: conversation)
                     }
-                    .listRowBackground(Color.clear)
+                   // enlève style iOS par défaut
+                    .listStyle(.plain)
                 }
-                .scrollContentBackground(.hidden)
-            }
             .navigationTitle("Messages")
         }
     }

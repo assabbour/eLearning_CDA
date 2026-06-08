@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Messages: Identifiable {
+struct Conversation: Identifiable {
+    //identifiant unique automatique
     let id = UUID()
     let text: String
     let isMe: Bool
