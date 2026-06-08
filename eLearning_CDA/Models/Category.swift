@@ -7,20 +7,24 @@
 
 import Foundation
 
+
 enum Categories: Identifiable, CaseIterable {
     case live
-    case cour
+    case course // a changer partout dans mon app ...
     case game
     case quizz
-    
+
     var id: Self { self }
-    
+
     var text: String {
         switch self {
         case .live: return "Lives"
-        case .cour: return "Cours"
+        case .course: return "Cours"
         case .game: return "Jeux"
         case .quizz: return "Quizz"
         }
     }
 }
+
+
+ 
