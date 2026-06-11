@@ -12,13 +12,13 @@ struct Content: Identifiable {
 // 12 contenus : 3 Lives, 3 Cours, 3 Jeux, 3 Quizz
 let contents: [Content] = [
     // Cours
-    Content(imageCourse: "php", title: "PHP Zero to Hero", description: "Formation complète PHP", likes: "9K", category: .cour),
-    Content(imageCourse: "java", title: "Java Fundamentals", description: "Bases solides en Java", likes: "1K", category: .cour),
-    Content(imageCourse: "python", title: "Python for Beginners", description: "Débuter avec Python", likes: "900", category: .cour),
+    Content(imageCourse: "php", title: "PHP Zero to Hero", description: "Formation complète PHP", likes: "9K", category: .course),
+    Content(imageCourse: "java", title: "Java Fundamentals", description: "Bases solides en Java", likes: "1K", category: .course),
+    Content(imageCourse: "html", title: "Python for Beginners", description: "Débuter avec Python", likes: "900", category: .course),
 
     // Lives
-    Content(imageCourse: "live1", title: "Live SwiftUI", description: "Créer une interface moderne", likes: "2K", category: .live),
-    Content(imageCourse: "live2", title: "Live DevOps", description: "Docker et CI/CD", likes: "4K", category: .live),
+    Content(imageCourse: "live", title: "Live SwiftUI", description: "Créer une interface moderne", likes: "2K", category: .live),
+    Content(imageCourse: "live1", title: "Live DevOps", description: "Docker et CI/CD", likes: "4K", category: .live),
     Content(imageCourse: "live3", title: "Live Cyber", description: "Sécurité web OWASP", likes: "3K", category: .live),
 
     // Jeux

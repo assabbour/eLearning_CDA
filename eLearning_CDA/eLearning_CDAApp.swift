@@ -11,9 +11,7 @@ import SwiftUI
 struct eLearning_CDAApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            //ExpertDetailsView()
-            HomeView()
+            ContentView()
         }
     }
 }

@@ -133,3 +133,8 @@ struct HomeView: View {
         }
     }
 }
+
+// Preview pour voir l'écran dans Xcode sans lancer l'application
+#Preview {
+    HomeView()
+}
